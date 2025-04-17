@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, MapPin, Linkedin, GitHub } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ContactProps {
@@ -127,7 +126,7 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
                 </div>
                 
                 <div className="flex items-start">
-                  <GitHub className="w-5 h-5 mt-1 text-accent-green mr-3" />
+                  <Github className="w-5 h-5 mt-1 text-accent-green mr-3" />
                   <div>
                     <h4 className="font-medium">GitHub</h4>
                     <a 
