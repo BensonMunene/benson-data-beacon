@@ -1,4 +1,3 @@
-```markdown
 # Personal Portfolio Web App
 
 ## Overview
