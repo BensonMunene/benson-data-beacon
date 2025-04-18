@@ -1,8 +1,7 @@
-
 export interface Skill {
   name: string;
   level: number;
-  category: 'language' | 'tool' | 'cloud' | 'ml' | 'other';
+  category: 'language' | 'tool' | 'cloud' | 'ml' | 'quant' | 'other';
 }
 
 export interface Project {
