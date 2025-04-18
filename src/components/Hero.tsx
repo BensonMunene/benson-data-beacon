@@ -12,7 +12,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
     <section 
       id="home" 
-      className={cn('min-h-[85vh] flex flex-col justify-center relative pt-12', className)}
+      className={cn('min-h-[80vh] flex flex-col justify-center relative pt-8', className)}
     >
       {/* Background grid pattern */}
       <div 
@@ -24,8 +24,8 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
       ></div>
       
       <div className="container mx-auto px-4 animate-fade-in">
-        <div className="flex flex-col md:flex-row items-center gap-6 max-w-5xl mx-auto">
-          <div className="w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-accent-green shadow-xl">
+        <div className="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
+          <div className="w-48 h-48 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-accent-green shadow-xl">
             <img 
               src="/lovable-uploads/7c76a28b-77ba-4f18-a88a-e4a411499ccf.png"
               alt="Benson Munene"
@@ -33,14 +33,14 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             />
           </div>
           
-          <div>
-            <h2 className="text-accent-green font-semibold mb-1">
+          <div className="flex-1">
+            <h2 className="text-accent-green font-semibold text-xl mb-2">
               Hello, I'm
             </h2>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
               <span className="text-gradient">Benson Munene</span>
             </h1>
-            <h2 className="text-xl md:text-2xl font-bold mb-3 text-foreground/90">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground/90">
               Data Scientist & Financial Engineer
             </h2>
             <div className="flex items-center gap-2 mb-6">
@@ -64,7 +64,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               big data pipelines, and real-time decision-making systems.
             </p>
             
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-6 mt-8">
               <Button 
                 className="bg-primary-blue hover:bg-primary-blue/90"
                 size="lg"
