@@ -164,19 +164,35 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
           
             <div>
               <h3 className="text-xl font-bold mb-4">Freelancing</h3>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="inline-block bg-[#14a800] text-white text-xs px-2 py-1 rounded-full">
-                  Top-Rated Plus
-                </span>
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="text-yellow-400 fill-current" />
-                  ))}
+              <div className="flex flex-col md:flex-row items-center gap-4 mb-4">
+                <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#14a800]">
+                  <img 
+                    src="/lovable-uploads/7c76a28b-77ba-4f18-a88a-e4a411499ccf.png"
+                    alt="Benson Munene"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <a 
+                      href="https://www.upwork.com/freelancers/bensonm27"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-[#14a800] text-white px-4 py-2 rounded-full hover:bg-[#14a800]/90 transition-colors"
+                    >
+                      Top Rated Plus on Upwork
+                      <div className="flex">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} size={16} className="fill-current" />
+                        ))}
+                      </div>
+                    </a>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Available for freelance projects in data science, machine learning, and financial engineering.
+                  </p>
                 </div>
               </div>
-              <p className="text-muted-foreground">
-                Available for freelance projects in data science, machine learning, and financial engineering.
-              </p>
             </div>
           </div>
         </div>
