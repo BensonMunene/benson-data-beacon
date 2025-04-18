@@ -1,8 +1,9 @@
+
 import React, { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skill } from '@/utils/types';
 import { cn } from '@/lib/utils';
-import { Code, Database, Cloud, Brain, Calculator, Wrench } from 'lucide-react';
+import { Code, Database, Cloud, Brain, Calculator, LineChart, LayoutDashboard, Server } from 'lucide-react';
 
 interface SkillsProps {
   className?: string;
@@ -17,19 +18,23 @@ const Skills: React.FC<SkillsProps> = ({ className }) => {
     { name: 'JavaScript', level: 100, category: 'language' },
     
     // Tools/Frameworks
-    { name: 'Django', level: 100, category: 'tool' },
-    { name: 'React', level: 100, category: 'tool' },
-    { name: 'Power BI', level: 100, category: 'tool' },
-    { name: 'Tableau', level: 100, category: 'tool' },
-    { name: 'Looker Studio', level: 100, category: 'tool' },
-    { name: 'Excel', level: 100, category: 'tool' },
-    { name: 'R Shiny', level: 100, category: 'tool' },
+    { name: 'Django', level: 100, category: 'dashboard' },
+    { name: 'React', level: 100, category: 'dashboard' },
+    { name: 'Power BI', level: 100, category: 'dashboard' },
+    { name: 'Tableau', level: 100, category: 'dashboard' },
+    { name: 'Looker Studio', level: 100, category: 'dashboard' },
+    { name: 'Excel', level: 100, category: 'dashboard' },
+    { name: 'R Shiny', level: 100, category: 'dashboard' },
     
     // Cloud & Big Data
-    { name: 'AWS', level: 100, category: 'cloud' },
-    { name: 'Snowflake', level: 100, category: 'cloud' },
-    { name: 'Microsoft Azure', level: 100, category: 'cloud' },
-    { name: 'Google Cloud Platform', level: 100, category: 'cloud' },
+    { name: 'AWS', level: 100, category: 'bigdata' },
+    { name: 'Snowflake', level: 100, category: 'bigdata' },
+    { name: 'Microsoft Azure', level: 100, category: 'bigdata' },
+    { name: 'Google Cloud Platform', level: 100, category: 'bigdata' },
+    { name: 'Hadoop', level: 100, category: 'bigdata' },
+    { name: 'Apache Hive', level: 100, category: 'bigdata' },
+    { name: 'PostgreSQL', level: 100, category: 'bigdata' },
+    { name: 'Apache Spark', level: 100, category: 'bigdata' },
     
     // Machine Learning/AI
     { name: 'Scikit-learn', level: 100, category: 'ml' },
@@ -39,33 +44,38 @@ const Skills: React.FC<SkillsProps> = ({ className }) => {
     { name: 'Keras', level: 100, category: 'ml' },
     { name: 'NLP', level: 100, category: 'ml' },
     { name: 'Reinforcement Learning', level: 100, category: 'ml' },
+    { name: 'OpenCV', level: 100, category: 'ml' },
     
-    // Quant & Econometrics
+    // Quant Finance
+    { name: 'Python', level: 100, category: 'quant' },
+    { name: 'R', level: 100, category: 'quant' },
     { name: 'MATLAB', level: 100, category: 'quant' },
     { name: 'Stata', level: 100, category: 'quant' },
+    { name: 'Excel', level: 100, category: 'quant' },
     { name: 'EViews', level: 100, category: 'quant' },
-    { name: 'Python + QuantLib', level: 100, category: 'quant' },
-    { name: 'R + quantmod', level: 100, category: 'quant' },
     
-    // Other
-    { name: 'Git', level: 100, category: 'other' },
-    { name: 'Docker', level: 100, category: 'other' },
-    { name: 'REST APIs', level: 100, category: 'other' },
+    // Algo Trading & HFT
+    { name: 'Python', level: 100, category: 'algotrading' },
+    { name: 'MQL5', level: 100, category: 'algotrading' },
+    { name: 'MQL4', level: 100, category: 'algotrading' },
+    { name: 'TradingView PineScript', level: 100, category: 'algotrading' },
+    { name: 'Interactive Brokers', level: 100, category: 'algotrading' },
+    { name: 'MultiCharts', level: 100, category: 'algotrading' },
+    { name: 'TradeStation EasyLanguage', level: 100, category: 'algotrading' },
   ];
 
   const categories = [
-    { id: 'all', label: 'All', icon: Wrench },
-    { id: 'language', label: 'Languages', icon: Code },
-    { id: 'tool', label: 'Tools', icon: Database },
-    { id: 'cloud', label: 'Cloud', icon: Cloud },
-    { id: 'ml', label: 'ML/AI', icon: Brain },
-    { id: 'quant', label: 'Quant/Econometrics', icon: Calculator },
+    { id: 'dashboard', label: 'Dashboard & Web Dev', icon: LayoutDashboard },
+    { id: 'bigdata', label: 'Big Data & Cloud', icon: Server },
+    { id: 'ml', label: 'Machine Learning/AI', icon: Brain },
+    { id: 'quant', label: 'Quant Finance', icon: Calculator },
+    { id: 'algotrading', label: 'Algo Trading & HFT', icon: LineChart },
   ];
 
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCategory, setActiveCategory] = useState('dashboard');
   
   const filteredSkills = skills.filter(
-    skill => activeCategory === 'all' || skill.category === activeCategory
+    skill => skill.category === activeCategory
   );
 
   return (
@@ -76,8 +86,8 @@ const Skills: React.FC<SkillsProps> = ({ className }) => {
       <div className="container mx-auto px-4">
         <h2 className="section-title">Skills & Expertise</h2>
         
-        <Tabs defaultValue="all" className="w-full">
-          <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 mb-8">
+        <Tabs defaultValue="dashboard" className="w-full">
+          <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 mb-8">
             {categories.map((category) => (
               <TabsTrigger
                 key={category.id}

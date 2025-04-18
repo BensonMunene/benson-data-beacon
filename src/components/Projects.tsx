@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Project } from '@/utils/types';
 import { Badge } from '@/components/ui/badge';
@@ -19,50 +18,64 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       title: "Predictive Maintenance Models for Manufacturing",
       description: "Used ML models to predict equipment failures before they occurred to reduce downtime and cost.",
       technologies: ["Python", "Scikit-learn", "Pandas", "AWS", "Power BI"],
-      category: "machine-learning"
+      category: "data-science"
     },
     {
       id: 2,
-      title: "Sentiment Analysis on Social Media for Market Trend Prediction",
+      title: "Sentiment Analysis for Market Trends",
       description: "Analyzed social media data using NLP to anticipate market trends and consumer sentiment.",
       technologies: ["Python", "NLTK", "Tweepy", "Tableau"],
       category: "data-science"
     },
     {
       id: 3,
-      title: "Customer Segmentation and Personalized Recommendations for E-commerce",
-      description: "Built clustering models and recommendation engines to enhance personalization.",
-      technologies: ["Python", "Scikit-learn", "SQL", "Looker Studio"],
-      category: "data-science"
-    },
-    {
-      id: 4,
-      title: "Real-time Fraud Detection in Financial Transactions",
-      description: "Developed a streaming ML model to flag suspicious activity in fintech transactions.",
-      technologies: ["Python", "Spark", "AWS Kinesis", "Flask"],
-      category: "financial"
-    },
-    {
-      id: 5,
-      title: "Automated Disease Diagnosis with Medical Imaging Data",
+      title: "Automated Disease Diagnosis System",
       description: "Used CNNs to automate diagnostic classification of X-rays.",
       technologies: ["TensorFlow", "Keras", "OpenCV", "Python"],
       category: "machine-learning"
     },
     {
+      id: 4,
+      title: "Customer Behavior Prediction",
+      description: "Built machine learning models to predict customer churn and lifetime value.",
+      technologies: ["Python", "Scikit-learn", "XGBoost", "PostgreSQL"],
+      category: "machine-learning"
+    },
+    {
+      id: 5,
+      title: "High-Frequency Trading System",
+      description: "Developed automated trading strategies for forex and crypto markets.",
+      technologies: ["Python", "MQL5", "Interactive Brokers API"],
+      category: "algotrading"
+    },
+    {
       id: 6,
-      title: "NLP for Automated Customer Service & Engagement",
-      description: "Created a chatbot and automated ticket categorization system using NLP.",
-      technologies: ["Python", "spaCy", "Django", "React"],
-      category: "data-science"
+      title: "Technical Analysis Bot",
+      description: "Created indicators and automated trading signals for multiple assets.",
+      technologies: ["TradingView PineScript", "Python", "MultiCharts"],
+      category: "algotrading"
+    },
+    {
+      id: 7,
+      title: "Financial Analytics Dashboard",
+      description: "Built interactive dashboards for portfolio analysis and risk management.",
+      technologies: ["Power BI", "React", "Django", "PostgreSQL"],
+      category: "dashboard"
+    },
+    {
+      id: 8,
+      title: "Real-time Market Monitor",
+      description: "Developed real-time dashboard for market data visualization and alerts.",
+      technologies: ["React", "D3.js", "WebSocket", "Node.js"],
+      category: "dashboard"
     }
   ];
 
   const categories = [
-    { value: "all", label: "All Projects" },
     { value: "data-science", label: "Data Science" },
     { value: "machine-learning", label: "Machine Learning" },
-    { value: "financial", label: "Financial" },
+    { value: "algotrading", label: "Algo Trading" },
+    { value: "dashboard", label: "Dashboards & Web Apps" },
   ];
 
   const [activeCategory, setActiveCategory] = useState("all");

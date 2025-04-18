@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, MapPin, Linkedin, Github } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github, Briefcase } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ContactProps {
@@ -12,10 +12,7 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ className }) => {
   return (
-    <section 
-      id="contact" 
-      className={cn('section-padding bg-secondary/30', className)}
-    >
+    <section id="contact" className={cn('section-padding bg-secondary/30', className)}>
       <div className="container mx-auto px-4">
         <h2 className="section-title">Get in Touch</h2>
         
@@ -115,12 +112,12 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
                   <div>
                     <h4 className="font-medium">LinkedIn</h4>
                     <a 
-                      href="https://linkedin.com/in/your-linkedin" 
+                      href="http://www.linkedin.com/in/benson-munene" 
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-accent-green"
                     >
-                      linkedin.com/in/your-linkedin
+                      linkedin.com/in/benson-munene
                     </a>
                   </div>
                 </div>
@@ -136,6 +133,21 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
                       className="text-muted-foreground hover:text-accent-green"
                     >
                       github.com/your-github
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Briefcase className="w-5 h-5 mt-1 text-accent-green mr-3" />
+                  <div>
+                    <h4 className="font-medium">Upwork</h4>
+                    <a 
+                      href="https://www.upwork.com/freelancers/bensonm27" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-accent-green"
+                    >
+                      upwork.com/freelancers/bensonm27
                     </a>
                   </div>
                 </div>

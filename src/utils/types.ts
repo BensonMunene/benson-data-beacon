@@ -1,7 +1,7 @@
 export interface Skill {
   name: string;
   level: number;
-  category: 'language' | 'tool' | 'cloud' | 'ml' | 'quant' | 'other';
+  category: 'language' | 'tool' | 'cloud' | 'ml' | 'quant' | 'algotrading' | 'dashboard' | 'bigdata';
 }
 
 export interface Project {
@@ -10,7 +10,7 @@ export interface Project {
   description: string;
   technologies: string[];
   image?: string;
-  category: 'data-science' | 'machine-learning' | 'financial' | 'cloud';
+  category: 'data-science' | 'machine-learning' | 'financial' | 'cloud' | 'algotrading' | 'dashboard';
 }
 
 export interface Education {
