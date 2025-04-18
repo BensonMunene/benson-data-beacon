@@ -5,6 +5,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { Mail, MapPin, Linkedin, Github, Briefcase } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Star } from 'lucide-react';
 
 interface ContactProps {
   className?: string;
@@ -87,14 +88,14 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
               <p className="text-muted-foreground mb-6">
                 Feel free to reach out for collaborations, opportunities, or just to say hello!
               </p>
-              
+            
               <div className="space-y-4">
                 <div className="flex items-start">
                   <Mail className="w-5 h-5 mt-1 text-accent-green mr-3" />
                   <div>
                     <h4 className="font-medium">Email</h4>
-                    <a href="mailto:your-email@example.com" className="text-muted-foreground hover:text-accent-green">
-                      your-email@example.com
+                    <a href="mailto:bensonmunene14@gmail.com" className="text-muted-foreground hover:text-accent-green">
+                      bensonmunene14@gmail.com
                     </a>
                   </div>
                 </div>
@@ -104,6 +105,28 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
                   <div>
                     <h4 className="font-medium">Location</h4>
                     <p className="text-muted-foreground">Remote / Worldwide</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Briefcase className="w-5 h-5 mt-1 text-accent-green mr-3" />
+                  <div>
+                    <h4 className="font-medium">Upwork</h4>
+                    <div className="flex items-center gap-2">
+                      <a 
+                        href="https://www.upwork.com/freelancers/bensonm27" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-accent-green"
+                      >
+                        Top-Rated Plus Freelancer
+                      </a>
+                      <div className="flex">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} size={16} className="text-yellow-400 fill-current" />
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
@@ -136,31 +159,20 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
                     </a>
                   </div>
                 </div>
-                
-                <div className="flex items-start">
-                  <Briefcase className="w-5 h-5 mt-1 text-accent-green mr-3" />
-                  <div>
-                    <h4 className="font-medium">Upwork</h4>
-                    <a 
-                      href="https://www.upwork.com/freelancers/bensonm27" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-accent-green"
-                    >
-                      upwork.com/freelancers/bensonm27
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
-            
+          
             <div>
               <h3 className="text-xl font-bold mb-4">Freelancing</h3>
-              <div className="flex items-center mb-2">
-                <span className="inline-block bg-accent-green text-white text-xs px-2 py-1 rounded-full mr-2">
-                  Top-Rated
+              <div className="flex items-center gap-2 mb-2">
+                <span className="inline-block bg-[#14a800] text-white text-xs px-2 py-1 rounded-full">
+                  Top-Rated Plus
                 </span>
-                <p className="font-medium">Upwork Freelancer</p>
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="text-yellow-400 fill-current" />
+                  ))}
+                </div>
               </div>
               <p className="text-muted-foreground">
                 Available for freelance projects in data science, machine learning, and financial engineering.

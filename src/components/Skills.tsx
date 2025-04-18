@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skill } from '@/utils/types';
@@ -14,8 +13,9 @@ const Skills: React.FC<SkillsProps> = ({ className }) => {
     // Languages
     { name: 'Python', level: 100, category: 'language' },
     { name: 'R', level: 100, category: 'language' },
-    { name: 'SQL', level: 100, category: 'language' },
+    { name: 'Java', level: 100, category: 'language' },
     { name: 'JavaScript', level: 100, category: 'language' },
+    { name: 'SQL', level: 100, category: 'language' },
     
     // Tools/Frameworks
     { name: 'Django', level: 100, category: 'dashboard' },
@@ -65,6 +65,7 @@ const Skills: React.FC<SkillsProps> = ({ className }) => {
   ];
 
   const categories = [
+    { id: 'language', label: 'Programming Languages', icon: Code },
     { id: 'dashboard', label: 'Dashboard & Web Dev', icon: LayoutDashboard },
     { id: 'bigdata', label: 'Big Data & Cloud', icon: Server },
     { id: 'ml', label: 'Machine Learning/AI', icon: Brain },
